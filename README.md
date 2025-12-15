@@ -3,7 +3,6 @@
 > **Môn học:** Trí tuệ Nhân tạo (Artificial Intelligence)  
 > **Sinh viên thực hiện:** Phan Thanh Trí  
 > **MSSV:** 2001230977  
-> **Học kỳ:** [Điền Học Kỳ/Năm học]
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Algorithm-orange?style=for-the-badge)
@@ -86,10 +85,13 @@ Feature_1, Feature_2, Label
 1.5,       2.5,       0
 8.5,       9.0,       1
 ...
+
  Minh họa kết quả (Screenshots)Sau khi chạy, chương trình sẽ hiển thị các biểu đồ trực quan:
+
  Phương pháp Khuỷu tay (Elbow Method):
  Biểu đồ đường thể hiện chỉ số Inertia giảm dần khi $K$ tăng.
  Chương trình sẽ đánh dấu ngôi sao đỏ tại điểm gãy khúc (Elbow Point) - đó là số cụm $K$ tối ưu được chọn.
+
  Kết quả phân cụm / Phân loại:
  Hiển thị biểu đồ Scatter Plot với các điểm dữ liệu được tô màu theo cụm/lớp.
  Hiển thị vị trí các Tâm cụm (Centroids) (đối với K-Means) bằng dấu X màu đỏ nổi bật.
