@@ -91,8 +91,13 @@ Feature_1, Feature_2, Label
  Phương pháp Khuỷu tay (Elbow Method):
  Biểu đồ đường thể hiện chỉ số Inertia giảm dần khi $K$ tăng.
  Chương trình sẽ đánh dấu ngôi sao đỏ tại điểm gãy khúc (Elbow Point) - đó là số cụm $K$ tối ưu được chọn.
+<img width="744" height="432" alt="image" src="https://github.com/user-attachments/assets/3e1d4a0b-da74-434e-a9f1-5f1dcf93ae28" />
 
  Kết quả phân cụm / Phân loại:
  Hiển thị biểu đồ Scatter Plot với các điểm dữ liệu được tô màu theo cụm/lớp.
  Hiển thị vị trí các Tâm cụm (Centroids) (đối với K-Means) bằng dấu X màu đỏ nổi bật.
+ <img width="626" height="433" alt="image" src="https://github.com/user-attachments/assets/67922cc1-c6d1-4b72-a829-605367b616a1" />
+
  Hiển thị điểm dữ liệu mới cần dự đoán (đối với K-NN) và kết quả phân loại.
+<img width="719" height="448" alt="image" src="https://github.com/user-attachments/assets/041049a0-1327-4880-b716-af58b9172e0d" />
+<img width="673" height="427" alt="image" src="https://github.com/user-attachments/assets/dea00084-4ef7-4081-a720-30ec3c175a79" />
