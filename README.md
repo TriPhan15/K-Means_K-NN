@@ -1,6 +1,6 @@
-#  K-Means & K-NN (Implementation From Scratch)
+#  K-Means & K-NN 
 
-> **Môn học:** Trí tuệ Nhân tạo (Artificial Intelligence)  
+> **Môn học:** Thực Hành Trí tuệ Nhân tạo (Artificial Intelligence)  
 > **Sinh viên thực hiện:** Phan Thanh Trí  
 > **MSSV:** 2001230977  
 
@@ -21,8 +21,45 @@ Mục tiêu chính của đồ án là thể hiện sự hiểu biết sâu sắ
 2.  **K-Nearest Neighbors (K-NN):** Thuật toán học có giám sát (Supervised Learning) dùng để phân loại dữ liệu mới dựa trên khoảng cách với các điểm dữ liệu cũ.
 
 ---
+##  Cơ sở lý thuyết (Theoretical Basis)
 
+Dự án được xây dựng dựa trên các nền tảng toán học đại số tuyến tính và thống kê cơ bản:
+
+### 1. K-Means Clustering
+Thuật toán K-Means hoạt động dựa trên việc tối ưu hóa hàm mục tiêu (Objective Function) để phân chia dữ liệu $X$ thành $K$ cụm $C_1, ..., C_k$.
+
+* **Hàm mất mát (Loss Function / Inertia):**
+    Mục tiêu là tìm các tâm cụm $\mu$ sao cho tổng bình phương khoảng cách từ các điểm đến tâm cụm của nó là nhỏ nhất:
+    
+    $$J = \sum_{j=1}^{K} \sum_{i=1}^{n} ||x_i^{(j)} - \mu_j||^2$$
+    
+    *Trong đó:*
+    * $x_i^{(j)}$: Điểm dữ liệu thứ $i$ thuộc cụm $j$.
+    * $\mu_j$: Tâm (centroid) của cụm $j$.
+    * $||...||^2$: Bình phương khoảng cách Euclidean L2.
+
+* **Quy trình lặp (Iterative Optimization):**
+    1.  **Gán nhãn (Cluster Assignment):** Mỗi điểm $x^{(i)}$ được gán cho cụm $k$ có tâm $\mu_k$ gần nhất:
+        $$c^{(i)} := \text{arg}\min_k ||x^{(i)} - \mu_k||^2$$
+    2.  **Cập nhật tâm (Move Centroids):** Tính lại vị trí tâm mới bằng trung bình cộng tọa độ các điểm trong cụm:
+        $$\mu_k := \frac{1}{|C_k|} \sum_{x \in C_k} x$$
+
+### 2. K-Nearest Neighbors (K-NN)
+K-NN là thuật toán dựa trên vùng lân cận (Instance-based learning). Việc phân loại dựa trên khoảng cách giữa điểm dữ liệu mới $x_{new}$ và tập dữ liệu huấn luyện $S$.
+
+* **Khoảng cách Euclidean (Euclidean Distance):**
+    Độ tương đồng giữa hai vector $A$ và $B$ trong không gian $n$ chiều:
+    
+    $$d(A, B) = \sqrt{\sum_{i=1}^{n} (A_i - B_i)^2}$$
+
+* **Cơ chế bầu chọn (Majority Voting):**
+    Giả sử $N_k$ là tập hợp $K$ điểm láng giềng gần nhất của $x_{new}$. Nhãn dự đoán $\hat{y}$ được quyết định bởi lớp chiếm đa số:
+    
+    $$\hat{y} = \text{arg}\max_v \sum_{(x_i, y_i) \in N_k} I(y_i = v)$$
+    
+    *Trong đó:* $I(.)$ là hàm chỉ thị (Indicator function), trả về 1 nếu $y_i$ trùng với nhãn $v$, ngược lại là 0.
 ##  Tính năng nổi bật (Key Features)
+
 
 ### 1. Thuật toán cốt lõi (Core Algorithms)
 * **Pure Implementation:** Sử dụng `numpy` và `scipy.spatial.distance` để tính toán ma trận hiệu năng cao.
@@ -78,8 +115,10 @@ File chỉ cần chứa các cột đặc trưng số học (tọa độ điểm
 3.2, 4.1
 8.5, 9.0
 ...
+
 ### 2. Cho K-NN (Features + Label)
 File cần có các cột đặc trưng và **cột cuối cùng bắt buộc phải là Nhãn (Label/Class)**.
+
 ```csv
 Feature_1, Feature_2, Label
 1.5,       2.5,       0
