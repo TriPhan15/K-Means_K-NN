@@ -13,7 +13,7 @@
 
 ##  Giới thiệu (Introduction)
 
-Dự án này tập trung vào việc **cài đặt thủ công (from scratch)** hai thuật toán học máy cơ bản và quan trọng nhất mà **không sử dụng các class mô hình có sẵn** (như `KMeans` hay `KNeighborsClassifier`) trong thư viện `scikit-learn`.
+Đồ án này tập trung vào việc **cài đặt thủ công (from scratch)** hai thuật toán học máy cơ bản và quan trọng nhất mà **không sử dụng các class mô hình có sẵn** (như `KMeans` hay `KNeighborsClassifier`) trong thư viện `scikit-learn`.
 
 Mục tiêu chính của đồ án là thể hiện sự hiểu biết sâu sắc về toán học, quy trình tính toán ma trận và logic hoạt động bên trong của các thuật toán:
 
